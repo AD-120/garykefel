@@ -9,20 +9,24 @@ function setup() {
   generateQuestion();
 
   input = createInput();
-  input.position(150, 80);
+  input.position(width / 2 -90, 80); // Centering the input box
 
   button = createButton("שאל את גארי");
-  button.position(150, 120);
+  button.position(width / 2 - 40, 120);
   button.mousePressed(checkAnswer);
+  button.style("text-align", "center"); // Aligning text inside the button to center
 
   message = createElement("h2", "");
-  message.position(150, 150);
+  message.position(width / 2 - 50, 150);
+  message.style("text-align", "center"); // Aligning text in the message to center
 
   newGameButton = createButton("משחק חדש");
-  newGameButton.position(150, 200);
+  newGameButton.position(width / 2 - 50, 200);
   newGameButton.hide();
   newGameButton.mousePressed(newGame);
+  newGameButton.style("text-align", "center"); // Aligning text inside the button to center
 }
+
 
 function draw() {
   background(220);
