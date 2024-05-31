@@ -13,7 +13,6 @@ function setup() {
   input = createInput();
   input.position(width / 2 - 90, 80); // Centering the input box
 
-
   button = createButton("שאל את גארי");
   button.position(width / 2 - 40, 120);
   button.mousePressed(checkAnswer);
@@ -61,7 +60,8 @@ function checkAnswer() {
   textAlign(CENTER, CENTER);
   userAnswer = int(input.value());
   if (userAnswer === num1 * num2) {
-    message.html("הצלחת יא גארי! מלך");
+    message.html("הצלחת יא גארי מלך!");
+    score++; // Increment the score
     setTimeout(() => {
       message.html('');
       generateQuestion();
@@ -69,6 +69,7 @@ function checkAnswer() {
   } else {
     let correctAnswer = num1 * num2;
     message.html(`טעית! גארי יתפוס אותך <br> התשובה היא ${correctAnswer}`);
+    score--; // Decrement the score
     setTimeout(() => {
       message.html("");
       generateQuestion();
